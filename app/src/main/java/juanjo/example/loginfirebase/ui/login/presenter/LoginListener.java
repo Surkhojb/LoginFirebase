@@ -1,7 +1,7 @@
-package juanjo.example.loginfirebase.ui.login.interactor;
+package juanjo.example.loginfirebase.ui.login.presenter;
 
 /**
- * Created by juanjoberenguer on 14/6/17.
+ * Created by juanjoberenguer on 19/6/17.
  */
 
 public interface LoginListener {

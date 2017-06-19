@@ -1,8 +1,8 @@
 package juanjo.example.loginfirebase.ui.login.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
-import android.opengl.Visibility;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +17,7 @@ import juanjo.example.loginfirebase.LoginApplication;
 import juanjo.example.loginfirebase.R;
 import juanjo.example.loginfirebase.di.modules.LoginModule;
 import juanjo.example.loginfirebase.ui.login.presenter.LoginPresenter;
+import juanjo.example.loginfirebase.ui.main.MainActivity;
 
 public class LoginActivity extends AppCompatActivity implements LoginView{
 
@@ -102,5 +103,10 @@ public class LoginActivity extends AppCompatActivity implements LoginView{
     @Override
     public void singUp() {
         presenter.startSingUp();
+    }
+
+    @Override
+    public void launchActivity() {
+        startActivity(new Intent(this, MainActivity.class));
     }
 }

@@ -1,8 +1,5 @@
 package juanjo.example.loginfirebase.di.components;
 
-import javax.inject.Singleton;
-
-import dagger.Component;
 import dagger.Subcomponent;
 import juanjo.example.loginfirebase.di.modules.FirebaseModule;
 import juanjo.example.loginfirebase.di.modules.LoginModule;

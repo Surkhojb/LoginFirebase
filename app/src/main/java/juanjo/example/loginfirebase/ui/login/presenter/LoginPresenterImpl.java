@@ -2,15 +2,14 @@ package juanjo.example.loginfirebase.ui.login.presenter;
 
 import javax.inject.Inject;
 
-import juanjo.example.loginfirebase.ui.login.interactor.LoginInteractor;
-import juanjo.example.loginfirebase.ui.login.interactor.LoginListener;
 import juanjo.example.loginfirebase.ui.login.view.LoginView;
+import juanjo.example.loginfirebase.ui.login.interactor.LoginInteractor;
 
 /**
  * Created by juanjoberenguer on 14/6/17.
  */
 
-public class LoginPresenterImpl implements LoginPresenter, LoginListener {
+public class LoginPresenterImpl implements LoginPresenter,LoginListener {
     private LoginView view;
     private LoginInteractor interactor;
 
@@ -40,6 +39,7 @@ public class LoginPresenterImpl implements LoginPresenter, LoginListener {
     @Override
     public void onSucces(String data) {
         view.showMessage(data);
+        view.launchActivity();
     }
 
     @Override

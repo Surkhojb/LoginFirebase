@@ -1,5 +1,7 @@
 package juanjo.example.loginfirebase.ui.login.interactor;
 
+import juanjo.example.loginfirebase.ui.login.presenter.LoginListener;
+
 /**
  * Created by juanjoberenguer on 14/6/17.
  */

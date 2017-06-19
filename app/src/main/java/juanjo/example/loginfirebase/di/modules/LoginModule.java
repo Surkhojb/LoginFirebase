@@ -1,9 +1,5 @@
 package juanjo.example.loginfirebase.di.modules;
 
-import android.content.Context;
-
-import javax.inject.Singleton;
-
 import dagger.Module;
 import dagger.Provides;
 import juanjo.example.loginfirebase.di.scopes.ActivityScope;

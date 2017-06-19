@@ -1,7 +1,5 @@
 package juanjo.example.loginfirebase.ui.login.view;
 
-import juanjo.example.loginfirebase.ui.login.interactor.LoginListener;
-
 /**
  * Created by juanjoberenguer on 14/6/17.
  */
@@ -19,5 +17,7 @@ public interface LoginView{
 
     void login();
     void singUp();
+
+    void launchActivity();
 
 }

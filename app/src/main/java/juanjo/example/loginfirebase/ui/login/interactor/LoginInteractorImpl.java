@@ -8,11 +8,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 import javax.inject.Inject;
 
 import juanjo.example.loginfirebase.R;
+import juanjo.example.loginfirebase.ui.login.presenter.LoginListener;
+
 /**
  * Created by juanjoberenguer on 14/6/17.
  */

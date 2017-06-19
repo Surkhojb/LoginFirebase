@@ -1,13 +1,9 @@
 package juanjo.example.loginfirebase.di.components;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-
 import javax.inject.Singleton;
 
 import dagger.Component;
 import juanjo.example.loginfirebase.di.modules.LoginModule;
-import juanjo.example.loginfirebase.ui.login.view.LoginActivity;
 import juanjo.example.loginfirebase.di.modules.AppModule;
 import juanjo.example.loginfirebase.di.modules.FirebaseModule;
 
