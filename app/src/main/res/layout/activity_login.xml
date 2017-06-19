@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:padding="16dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="115dp"
+        android:id="@+id/textInputLayout">
+
+        <EditText
+            android:id="@+id/edEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="e-mail"
+            android:inputType="textEmailAddress" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+    </android.support.design.widget.TextInputLayout>
+
+    <EditText
+        android:id="@+id/edPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textInputLayout"
+        android:layout_marginTop="25dp"
+        android:hint="password"
+        android:inputType="textPassword" />
+
+
+    <Button
+        android:id="@+id/btnLogin"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="66dp"
+        android:text="Login"
+        />
+    <Button
+        android:id="@+id/btnSingup"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Sing up"
+        />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/common_google_signin_btn_icon_dark"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnLogin"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp" />
+</RelativeLayout>
