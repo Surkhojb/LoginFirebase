@@ -17,7 +17,7 @@ public class LoginApplication extends Application {
 
     private LoginApplication instance;
     private AppComponent appComponent;
-    private String URL = "https://jsonplaceholder.typicode.com/posts/";
+    private String URL = "https://jsonplaceholder.typicode.com/";
 
     @Override
     public void onCreate() {

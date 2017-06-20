@@ -1,4 +1,4 @@
-package juanjo.example.loginfirebase.ui.login.view;
+package juanjo.example.loginfirebase.ui.login;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,7 +15,6 @@ import javax.inject.Inject;
 
 import juanjo.example.loginfirebase.LoginApplication;
 import juanjo.example.loginfirebase.R;
-import juanjo.example.loginfirebase.di.modules.LoginModule;
 import juanjo.example.loginfirebase.ui.login.presenter.LoginPresenter;
 import juanjo.example.loginfirebase.ui.main.MainActivity;
 

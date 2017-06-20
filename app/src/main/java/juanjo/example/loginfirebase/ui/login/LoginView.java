@@ -1,4 +1,4 @@
-package juanjo.example.loginfirebase.ui.login.view;
+package juanjo.example.loginfirebase.ui.login;
 
 /**
  * Created by juanjoberenguer on 14/6/17.

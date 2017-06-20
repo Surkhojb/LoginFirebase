@@ -1,4 +1,4 @@
-package juanjo.example.loginfirebase.di.modules;
+package juanjo.example.loginfirebase.ui.login;
 
 import dagger.Module;
 import dagger.Provides;
@@ -7,7 +7,7 @@ import juanjo.example.loginfirebase.ui.login.interactor.LoginInteractor;
 import juanjo.example.loginfirebase.ui.login.interactor.LoginInteractorImpl;
 import juanjo.example.loginfirebase.ui.login.presenter.LoginPresenter;
 import juanjo.example.loginfirebase.ui.login.presenter.LoginPresenterImpl;
-import juanjo.example.loginfirebase.ui.login.view.LoginView;
+import juanjo.example.loginfirebase.ui.login.LoginView;
 
 /**
  * Created by juanjoberenguer on 14/6/17.

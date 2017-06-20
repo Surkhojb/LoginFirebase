@@ -3,11 +3,10 @@ package juanjo.example.loginfirebase.di.components;
 import javax.inject.Singleton;
 
 import dagger.Component;
-import juanjo.example.loginfirebase.di.modules.LoginModule;
+import juanjo.example.loginfirebase.ui.login.LoginModule;
 import juanjo.example.loginfirebase.di.modules.AppModule;
-import juanjo.example.loginfirebase.di.modules.FirebaseModule;
+import juanjo.example.loginfirebase.ui.main.MainModule;
 import juanjo.example.loginfirebase.di.modules.ServiceModule;
-import juanjo.example.loginfirebase.ui.main.MainActivity;
 
 /**
  * Created by juanjoberenguer on 14/6/17.
@@ -17,5 +16,5 @@ import juanjo.example.loginfirebase.ui.main.MainActivity;
 @Component(modules = {AppModule.class,ServiceModule.class})
 public interface AppComponent {
     LoginComponent plus(LoginModule module);
-    void inject(MainActivity activity);
+    MainComponent plus(MainModule module);
 }

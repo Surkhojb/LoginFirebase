@@ -11,10 +11,12 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import juanjo.example.loginfirebase.data.RestApi;
 import juanjo.example.loginfirebase.di.scopes.ActivityScope;
 import okhttp3.Cache;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
@@ -56,11 +58,13 @@ public class ServiceModule {
 
     @Provides
     @Singleton
-    Retrofit provideRetrofit(Gson gson, OkHttpClient okHttpClient) {
+    RestApi provideRetrofit(Gson gson, OkHttpClient okHttpClient) {
         return new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create(gson))
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .baseUrl(BASE_URL)
                 .client(okHttpClient)
-                .build();
+                .build()
+                .create(RestApi.class);
     }
 }

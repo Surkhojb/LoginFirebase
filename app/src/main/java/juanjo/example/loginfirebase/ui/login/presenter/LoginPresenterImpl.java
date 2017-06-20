@@ -4,7 +4,7 @@ import javax.inject.Inject;
 
 import juanjo.example.loginfirebase.R;
 import juanjo.example.loginfirebase.ui.login.interactor.LoginInteractor;
-import juanjo.example.loginfirebase.ui.login.view.LoginView;
+import juanjo.example.loginfirebase.ui.login.LoginView;
 
 /**
  * Created by juanjoberenguer on 14/6/17.

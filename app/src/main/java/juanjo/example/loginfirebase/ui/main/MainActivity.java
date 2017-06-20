@@ -4,24 +4,51 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+
 import javax.inject.Inject;
 
 import juanjo.example.loginfirebase.LoginApplication;
 import juanjo.example.loginfirebase.R;
-import juanjo.example.loginfirebase.di.modules.ServiceModule;
-import retrofit2.Retrofit;
+import juanjo.example.loginfirebase.data.Posts;
+import juanjo.example.loginfirebase.ui.main.presenter.MainPresenter;
 
-public class MainActivity extends AppCompatActivity {
+
+public class MainActivity extends AppCompatActivity implements MainView {
 
     @Inject
-    Retrofit mRetrofit;
+    MainPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        LoginApplication.get(this).getAppComponent().inject(this);
-        Toast.makeText(this,mRetrofit.baseUrl().toString(),Toast.LENGTH_SHORT).show();
+        LoginApplication.get(this).getAppComponent().plus(new MainModule(this)).inject(this);
+        presenter.loadPost();
+
+    }
+    @Override
+    public String getQuery() {
+        return null;
+    }
+
+    @Override
+    public void showLoading(boolean state) {
+
+    }
+
+    @Override
+    public void showError(String msg) {
+        Toast.makeText(this,msg,Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void showPost(Posts post) {
+        Toast.makeText(this,post.getTitle() + post.getBody(),Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void launchDetailActivity() {
+
     }
 }
