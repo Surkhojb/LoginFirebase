@@ -25,7 +25,17 @@ public class MainPresenterImpl implements MainPresenter {
         interactor.getPosts().subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(posts -> view.showPost(posts.get(4)),
-                throwable -> view.showError(throwable.getLocalizedMessage()));
+                throwable -> view.showError(throwable.getLocalizedMessage()),
+                        () -> view.showTotalPost("100"));
 
+    }
+
+    @Override
+    public void loadComment() {
+        interactor.getComments().subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(comment -> view.showComment(comment.get(4)),
+                        throwable -> view.showError(throwable.getLocalizedMessage()),
+                        () -> view.showTotalComment("500"));
     }
 }

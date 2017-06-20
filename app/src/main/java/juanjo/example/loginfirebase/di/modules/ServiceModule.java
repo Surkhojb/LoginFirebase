@@ -11,8 +11,7 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import juanjo.example.loginfirebase.data.RestApi;
-import juanjo.example.loginfirebase.di.scopes.ActivityScope;
+import juanjo.example.loginfirebase.data.service.RestApi;
 import okhttp3.Cache;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;

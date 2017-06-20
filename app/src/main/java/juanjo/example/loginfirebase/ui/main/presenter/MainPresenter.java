@@ -6,4 +6,5 @@ package juanjo.example.loginfirebase.ui.main.presenter;
 
 public interface MainPresenter {
     void loadPost();
+    void loadComment();
 }

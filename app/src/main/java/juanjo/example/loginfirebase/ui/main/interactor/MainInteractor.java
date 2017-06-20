@@ -4,13 +4,15 @@ import java.util.List;
 
 
 import io.reactivex.Observable;
-import juanjo.example.loginfirebase.data.Posts;
+import juanjo.example.loginfirebase.data.model.Comment;
+import juanjo.example.loginfirebase.data.model.Post;
 
 /**
  * Created by juanjoberenguer on 20/6/17.
  */
 
 public interface MainInteractor {
-    Observable<List<Posts>> getPosts();
+    Observable<List<Post>> getPosts();
+    Observable<List<Comment>>getComments();
 
 }

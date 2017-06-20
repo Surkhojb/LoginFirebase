@@ -1,4 +1,4 @@
-package juanjo.example.loginfirebase.data;
+package juanjo.example.loginfirebase.data.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -8,7 +8,7 @@ import com.google.gson.annotations.SerializedName;
  */
 
 
-public class Posts {
+public class Post {
 
     @SerializedName("userId")
     @Expose
