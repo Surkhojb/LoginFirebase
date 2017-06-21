@@ -21,21 +21,15 @@ public class MainPresenterImpl implements MainPresenter {
         interactor = i;
     }
     @Override
-    public void loadPost() {
-        interactor.getPosts().subscribeOn(Schedulers.newThread())
+    public void loadSerie() {
+        view.showLoading(true);
+        interactor.getSerie(view.getQuery(),"full").subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(posts -> view.showPost(posts.get(4)),
+                .subscribe(serie -> view.showSerie(serie),
                 throwable -> view.showError(throwable.getLocalizedMessage()),
-                        () -> view.showTotalPost("100"));
+                        () -> view.showLoading(false));
 
     }
 
-    @Override
-    public void loadComment() {
-        interactor.getComments().subscribeOn(Schedulers.newThread())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(comment -> view.showComment(comment.get(4)),
-                        throwable -> view.showError(throwable.getLocalizedMessage()),
-                        () -> view.showTotalComment("500"));
-    }
+
 }

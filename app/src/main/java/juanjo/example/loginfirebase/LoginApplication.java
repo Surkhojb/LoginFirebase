@@ -3,6 +3,8 @@ package juanjo.example.loginfirebase;
 import android.app.Application;
 import android.content.Context;
 
+import java.net.URL;
+
 import juanjo.example.loginfirebase.di.components.AppComponent;
 import juanjo.example.loginfirebase.di.components.DaggerAppComponent;
 import juanjo.example.loginfirebase.di.modules.AppModule;
@@ -17,7 +19,7 @@ public class LoginApplication extends Application {
 
     private LoginApplication instance;
     private AppComponent appComponent;
-    private String URL = "https://jsonplaceholder.typicode.com/";
+    private static final String URL_BASE = "http://www.omdbapi.com/";
 
     @Override
     public void onCreate() {
@@ -26,7 +28,7 @@ public class LoginApplication extends Application {
 
         appComponent = DaggerAppComponent.builder()
                 .appModule(new AppModule(instance))
-                .serviceModule(new ServiceModule(URL))
+                .serviceModule(new ServiceModule(URL_BASE))
                 .build();
     }
 

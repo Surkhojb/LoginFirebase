@@ -1,6 +1,19 @@
 <resources>
     <string name="app_name">LoginFirebase</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
     <string name="invalid_inputs">User or password can not be empty.</string>
     <string name="error_creating_user">Error singin up user.</string>
     <string name="error_loging_user">Error loging your user credentials.</string>
+    <string name="action_settings">Settings</string>
+    //Menu items
+    <string name="menu_action_home">Home</string>
+    <string name="menu_action_following">Following</string>
+    <string name="menu_action_favorites">Favorites</string>
+    <string name="menu_action_explore">Explore</string>
+    <string name="menu_action_configuration">Configuration</string>
+    <string name="menu_action_about">About us</string>
+    <string name="action_search">Search</string>
+    <string name="search_hint">Search</string>
 </resources>

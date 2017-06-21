@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import io.reactivex.Observable;
 import juanjo.example.loginfirebase.data.model.Comment;
 import juanjo.example.loginfirebase.data.model.Post;
+import juanjo.example.loginfirebase.data.model.Serie;
 import juanjo.example.loginfirebase.data.service.RestApi;
 
 /**
@@ -21,12 +22,7 @@ public class MainInteractorImpl implements MainInteractor {
     public MainInteractorImpl(){}
 
     @Override
-    public Observable<List<Post>> getPosts() {
-        return mApi.getPosts();
-    }
-
-    @Override
-    public Observable<List<Comment>> getComments() {
-        return mApi.getComments();
+    public Observable<Serie> getSerie(String query, String plot) {
+        return mApi.getSerie(query,plot);
     }
 }
