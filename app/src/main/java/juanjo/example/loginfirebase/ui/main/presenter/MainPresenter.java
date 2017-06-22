@@ -5,6 +5,6 @@ package juanjo.example.loginfirebase.ui.main.presenter;
  */
 
 public interface MainPresenter {
-   void loadSerie();
-
+   void loadSeries(String  query);
+   void loadSerie(String query);
 }

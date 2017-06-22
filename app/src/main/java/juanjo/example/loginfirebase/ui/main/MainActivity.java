@@ -1,34 +1,32 @@
 package juanjo.example.loginfirebase.ui.main;
 
-import android.app.SearchManager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 
-import com.bumptech.glide.Glide;
+import java.util.List;
 
 import javax.inject.Inject;
 
 import juanjo.example.loginfirebase.LoginApplication;
 import juanjo.example.loginfirebase.R;
-import juanjo.example.loginfirebase.data.model.Comment;
-import juanjo.example.loginfirebase.data.model.Post;
 import juanjo.example.loginfirebase.data.model.Serie;
+import juanjo.example.loginfirebase.data.model.SingleSerie;
+import juanjo.example.loginfirebase.ui.main.adapter.SeriesAdapter;
 import juanjo.example.loginfirebase.ui.main.presenter.MainPresenter;
 
 
@@ -37,8 +35,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
     @Inject
     MainPresenter presenter;
 
-    TextView mDescription;
-    ImageView mImageView;
+    RecyclerView mRecycler;
     ProgressBar mProgressBar;
     DrawerLayout mDrawer;
     NavigationView mNavigationView;
@@ -56,8 +53,12 @@ public class MainActivity extends AppCompatActivity implements MainView {
     }
 
     private void loadUI() {
-        mDescription = (TextView) findViewById(R.id.home_activity_tv_description);
-        mImageView = (ImageView) findViewById(R.id.home_activity_image);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+
+        mRecycler = (RecyclerView) findViewById(R.id.main_activity_recyclerview);
+        mRecycler.setHasFixedSize(true);
+        mRecycler.setLayoutManager(layoutManager);
+
         mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
         mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         mNavigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -81,8 +82,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                mDescription.setText("Searching!");
-                presenter.loadSerie();
+                presenter.loadSeries(query);
                 return true;
             }
 
@@ -96,25 +96,21 @@ public class MainActivity extends AppCompatActivity implements MainView {
     }
 
     @Override
-    public String getQuery() {
-        return searchView.getQuery().toString();
-    }
-
-    @Override
     public void showLoading(boolean state) {
         mProgressBar.setVisibility(state ? View.VISIBLE : View.GONE);
     }
 
     @Override
     public void showError(String msg) {
-        showLoading(false);
         Toast.makeText(this,msg,Toast.LENGTH_SHORT).show();
     }
 
     @Override
-    public void showSerie(Serie serie) {
-        mDescription.setText(serie.getPlot());
-        Glide.with(this).load(serie.getPoster()).into(mImageView);
+    public void showSerie(List<Serie> series) {
+
+        SeriesAdapter mAdapter = new SeriesAdapter(series);
+        mRecycler.setAdapter(mAdapter);
+
     }
 
     @Override

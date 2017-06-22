@@ -43,6 +43,7 @@ public class ServiceModule {
     @Singleton
     Gson provideGson() {
         GsonBuilder gsonBuilder = new GsonBuilder();
+        gsonBuilder.serializeNulls();
         gsonBuilder.setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES);
         return gsonBuilder.create();
     }

@@ -1,6 +1,5 @@
 package juanjo.example.loginfirebase.ui.main.presenter;
 
-import android.util.Log;
 
 import javax.inject.Inject;
 
@@ -23,13 +22,21 @@ public class MainPresenterImpl implements MainPresenter {
         interactor = i;
     }
     @Override
-    public void loadSerie() {
+    public void loadSeries(String query) {
         view.showLoading(true);
-        interactor.getSerie(view.getQuery(),"full").subscribeOn(Schedulers.newThread())
+        interactor.getSeries(query).subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(serie -> view.showSerie(serie),
-                throwable -> view.showError(throwable.getLocalizedMessage()),
+                .subscribe(series -> view.showSerie(series),
+                        throwable -> {
+                            view.showLoading(false);
+                            view.showError(throwable.getLocalizedMessage());
+                        },
                         () -> view.showLoading(false));
+
+    }
+
+    @Override
+    public void loadSerie(String query) {
 
     }
 

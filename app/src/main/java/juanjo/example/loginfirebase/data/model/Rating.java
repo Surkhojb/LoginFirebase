@@ -8,23 +8,22 @@ import com.google.gson.annotations.SerializedName;
  */
 
 public class Rating {
-    @SerializedName("Source") @Expose
-    private String source;
-    @SerializedName("Value") @Expose private String value;
 
-    public String getSource() {
-        return source;
+    @SerializedName("average")
+    private Double average;
+
+    public Double getAverage() {
+        return average;
     }
 
-    public void setSource(String source) {
-        this.source = source;
+    public void setAverage(Double average) {
+        this.average = average;
     }
 
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
+    @Override
+    public String toString() {
+        return "Rating{" +
+                "average=" + average +
+                '}';
     }
 }

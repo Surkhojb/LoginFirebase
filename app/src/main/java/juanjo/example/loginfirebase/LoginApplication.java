@@ -19,7 +19,7 @@ public class LoginApplication extends Application {
 
     private LoginApplication instance;
     private AppComponent appComponent;
-    private static final String URL_BASE = "http://www.omdbapi.com/";
+    private static final String URL_BASE = "http://api.tvmaze.com/";
 
     @Override
     public void onCreate() {
@@ -28,7 +28,7 @@ public class LoginApplication extends Application {
 
         appComponent = DaggerAppComponent.builder()
                 .appModule(new AppModule(instance))
-                .serviceModule(new ServiceModule(URL_BASE))
+                .serviceModule(new ServiceModule(URL_BASE   ))
                 .build();
     }
 

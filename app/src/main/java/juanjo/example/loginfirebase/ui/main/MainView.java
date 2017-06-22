@@ -1,19 +1,19 @@
 package juanjo.example.loginfirebase.ui.main;
 
-import juanjo.example.loginfirebase.data.model.Comment;
-import juanjo.example.loginfirebase.data.model.Post;
+import java.util.List;
+
 import juanjo.example.loginfirebase.data.model.Serie;
+import juanjo.example.loginfirebase.data.model.SingleSerie;
 
 /**
  * Created by juanjoberenguer on 20/6/17.
  */
 
 public interface MainView {
-    String getQuery();
 
     void showLoading(boolean state);
     void showError(String msg);
-    void showSerie(Serie serie);
+    void showSerie(List<Serie> series);
 
     void launchDetailActivity();
 }
