@@ -1,5 +1,6 @@
 package juanjo.example.loginfirebase.ui.main;
 
+import android.app.SearchManager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.MenuItemCompat;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements MainView {
     ProgressBar mProgressBar;
     DrawerLayout mDrawer;
     NavigationView mNavigationView;
+    SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +53,6 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
         LoginApplication.get(this).getAppComponent().plus(new MainModule(this)).inject(this);
 
-        presenter.loadSerie();
-
     }
 
     private void loadUI() {
@@ -61,7 +61,9 @@ public class MainActivity extends AppCompatActivity implements MainView {
         mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
         mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         mNavigationView = (NavigationView) findViewById(R.id.nav_view);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         ActionBarDrawerToggle toggle =
                 new ActionBarDrawerToggle(this, mDrawer, toolbar, R.string.navigation_drawer_open,
@@ -71,8 +73,31 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
     }
     @Override
+    public boolean onCreateOptionsMenu( Menu menu) {
+        getMenuInflater().inflate( R.menu.menu_search_view, menu);
+        MenuItem myActionMenuItem = menu.findItem( R.id.action_search);
+        searchView = (SearchView) myActionMenuItem.getActionView();
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                mDescription.setText("Searching!");
+                presenter.loadSerie();
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return true;
+            }
+        });
+
+        return true;
+    }
+
+    @Override
     public String getQuery() {
-        return "";
+        return searchView.getQuery().toString();
     }
 
     @Override

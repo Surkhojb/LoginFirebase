@@ -1,5 +1,7 @@
 package juanjo.example.loginfirebase.ui.main.presenter;
 
+import android.util.Log;
+
 import javax.inject.Inject;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
