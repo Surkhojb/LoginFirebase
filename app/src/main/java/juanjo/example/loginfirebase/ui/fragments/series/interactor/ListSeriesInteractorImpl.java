@@ -24,6 +24,6 @@ public class ListSeriesInteractorImpl implements ListSeriesInteractor {
     @Override
     public Observable<List<Serie>> getSeries(String query) {
         Log.e("Fragment interactor: ","interactor query");
-        return mApi.getSeries("Girls");
+        return mApi.getSeries(query);
     }
 }

@@ -28,7 +28,7 @@ public class ListSeriesPresenterImpl implements ListSeriesPresenter {
         interactor.getSeries(query)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(series -> view.showSeries(series),
+                .subscribe(series -> { view.showSeries(series);},
                 throwable -> {
                     view.showLoading(false);
                     view.showError(throwable.getLocalizedMessage());
