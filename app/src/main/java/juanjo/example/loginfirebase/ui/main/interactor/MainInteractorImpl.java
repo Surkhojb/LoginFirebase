@@ -22,7 +22,6 @@ import retrofit2.Response;
 public class MainInteractorImpl implements MainInteractor {
     @Inject
     RestApi mApi;
-    List<SingleSerie> series = new ArrayList<SingleSerie>();
 
     @Inject
     public MainInteractorImpl(){}

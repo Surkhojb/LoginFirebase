@@ -23,6 +23,7 @@ public class MainPresenterImpl implements MainPresenter {
     }
     @Override
     public void loadSeries(String query) {
+        /*
         view.showLoading(true);
         interactor.getSeries(query).subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -32,6 +33,7 @@ public class MainPresenterImpl implements MainPresenter {
                             view.showError(throwable.getLocalizedMessage());
                         },
                         () -> view.showLoading(false));
+                        */
 
     }
 

@@ -9,8 +9,8 @@
     android:background="@color/colorItemBackground"
     >
 
-  <android.support.v7.widget.RecyclerView
-      android:id="@+id/main_activity_recyclerview"
+  <android.support.v7.widget.ContentFrameLayout
+      android:id="@+id/main_content"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:layout_marginTop="8dp"
@@ -21,21 +21,6 @@
       app:layout_constraintBottom_toBottomOf="parent"
       android:layout_marginBottom="8dp">
 
-  </android.support.v7.widget.RecyclerView>
-
-  <ProgressBar
-      android:id="@+id/progressBar"
-      style="?android:attr/progressBarStyleHorizontal"
-      android:layout_width="match_parent"
-      android:layout_height="8dp"
-      android:layout_marginStart="0dp"
-      android:indeterminate="true"
-      android:max="100"
-      android:progress="20"
-      android:visibility="gone"
-      app:layout_constraintStart_toStartOf="parent"
-      tools:layout_editor_absoluteX="0dp"
-      tools:layout_editor_absoluteY="0dp"
-      />
+  </android.support.v7.widget.ContentFrameLayout>
 
 </android.support.constraint.ConstraintLayout>

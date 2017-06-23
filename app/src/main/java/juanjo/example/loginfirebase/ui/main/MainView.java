@@ -10,10 +10,5 @@ import juanjo.example.loginfirebase.data.model.SingleSerie;
  */
 
 public interface MainView {
-
-    void showLoading(boolean state);
-    void showError(String msg);
-    void showSerie(List<Serie> series);
-
     void launchDetailActivity();
 }
