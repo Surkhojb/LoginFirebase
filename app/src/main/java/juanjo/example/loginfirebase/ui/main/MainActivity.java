@@ -118,13 +118,14 @@ public class MainActivity extends AppCompatActivity implements MainView {
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            loadFragment(ListSeries.newInstance(),"home");
+
 
         } else if (id == R.id.nav_following) {
 
         } else if (id == R.id.nav_favorites) {
 
         } else if (id == R.id.nav_explore) {
+            loadFragment(ListSeries.newInstance(),"home");
 
         } else if (id == R.id.nav_configuration) {
 
